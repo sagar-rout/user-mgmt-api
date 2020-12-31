@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: SR
+      comment: "Create initial tables"
+      failOnError: true
+      logicalFilePath: "path-independent"
+      runInTransaction: true
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/scripts/1_create_user_role_password_tables.sql
+            encoding: utf8
+  - changeSet:
+      id: 2
+      author: SR
+      comment: "Insert initial roles"
+      failOnError: true
+      logicalFilePath: "path-independent"
+      runInTransaction: true
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/scripts/2_insert_roles.sql
+            encoding: utf8
